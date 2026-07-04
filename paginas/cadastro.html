@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Livraria Margem</title>
+
+    <link rel="stylesheet" href="../css/style_cadastro.css">
+</head>
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                Livraria Margem
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="paginas/cadastro.html">Casdastro</a></li>
+                    <li><a href="paginas/sobre.html">Sobre</a></li>
+                    <li><a href="paginas/login.html">Login</a></li>
+                    <li><a href="paginas/carinho.html"><img src="../imagens/carrinho.jpg" alt=""></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="div-form">
+
+            <h3>Cadastro</h3>
+
+            <form id="form-cadastro">
+                <label for="nome">Nome*</label>
+                <input type="text" id="nome" name="nome" maxlength="15" required placeholder="Digite seu nome..." class="input01">
+
+                <label for="sobrenome">Sobrenome*</label>
+                <input type="text" id="sobrenome" name="sobrenome" maxlength="60" required placeholder="Digite seu sobrenome..." class="input01">
+
+                <label for="cpf">CPF*</label>
+                <input type="text" id="cpf" name="cpf" maxlength="14" required placeholder="Digite seu CPF..." class="input01">
+
+                <label for="telefone">Telefone*</label>
+                <input type="text" id="telefone" name="telefone" maxlength="11" required placeholder="Digite seu telefone..." class="input01">
+
+                <label for="email">Email*</label>
+                <input type="text" id="email" name="email" maxlength="60" required placeholder="Digite seu email..." class="input01">
+
+                <label for="data-nascimento">Data de nascimento*</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required class="input-data">
+
+                <label for="cep">CEP*</label>
+                <input type="text" id="cep" name="cep" maxlength="9" required placeholder="Digite seu CEP..." class="input01">
+
+                <label for="longradouro">Longradouro*</label>
+                <input type="text" id="longradouro" name="longradouro" maxlength="60" required placeholder="Digite seu longradouro..." class="input01">
+
+                <label for="numero">Número*</label>
+                <input type="text" id="numero" name="numero" maxlength="6" required placeholder="Digite o numero..." class="input01">
+
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" name="complemento" maxlength="100" required placeholder="Digite o complemento..." class="input01">
+
+                <label for="bairro">Bairro*</label>
+                <input type="text" id="bairro" name="bairro" maxlength="20" required placeholder="Digite seu bairro..." class="input01">
+
+                <label for="cidade">Cidade*</label>
+                <input type="text" id="cidade" name="cidade" maxlength="20" required placeholder="Digite sua cidade..." class="input01">
+
+                <label for="estado">Estado*</label>
+                <input type="text" id="estado" name="estado" maxlength="60" required placeholder="Digite seu estado..." class="input01">
+
+                <label for="senha">Senha*</label>
+                <input type="password" id="senha" name="senha" maxlength="60" required placeholder="Digite sua senha..." class="input01">
+
+                <div class="checkbox">
+                    <input type="checkbox" name="notificacao" id="notificacao">
+                    <label for="notificacao">Deseja receber notificações pelo WhatsApp</label>
+                </div>
+
+                <div id="div-btn">
+                    <button type="submit" id="btn-cadastrar" class="botoes">Cadastrar</button>
+                    <button type="reset" id="btn-limpar" class="botoes">Limpar</button>
+                </div>
+            </form>
+        </div>
+
+        <footer id="rodape">
+            <h2>&copy 2026 Livraria Margem S.A. Todos os direitos resevados</h2>
+            <p>Formas de pagamento: Pix, Cartões de Crédito e Débito</p>
+        </footer>
+
+    </main>
+    
+</body>
+</html>
