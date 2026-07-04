@@ -46,6 +46,11 @@
     list-style: none;
 }
 
+#menu img{
+    width: 35px;
+    height: 35px;
+}
+
 #pesquisa{
     height: 200px;
     background-color: var(--cor01);
@@ -125,6 +130,18 @@
     color: var(--branca);
     font-weight: bold;
     cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.card button:hover{
+    background-color: var(--cor02);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(66, 0, 141, 0.3);
+}
+
+.card button:active{
+    transform: scale(0.95);
 }
 
 /*FORMATANDO O RODAPÉ*/
@@ -159,18 +176,16 @@
     color: var(--cor02);
 }
 
+#menu a{
+    display: inline-block;
+    transition: transform .3s ease, color .3s ease;
+}
+
 #menu a:hover{
-    font-size: 1.6em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-decoration: none;
+    transform: translateY(-5px);
     color: var(--cor01);
 }
 
 #menu a:active{
-    font-size: 1.6em;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    text-decoration: none;
     color: var(--cor01);
 }
