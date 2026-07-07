@@ -1,0 +1,151 @@
+#login{
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#caixa-login{
+
+    width: 450px;
+
+    padding: 40px;
+
+    background-color: var(--branca);
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 20px rgba(66, 0, 141, .2);
+
+    display: flex;
+    flex-direction: column;
+}
+
+#caixa-login h1{
+
+    text-align: center;
+
+    color: var(--cor01);
+
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+}
+
+
+form{
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+form label{
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: var(--cor01);
+}
+
+form input{
+
+    width: 100%;
+
+    height: 45px;
+
+    margin-bottom: 20px;
+
+    padding: 10px 15px;
+
+    border: 2px solid var(--cor03);
+
+    border-radius: 6px;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+form input:focus{
+
+    border-color: var(--cor02);
+
+    box-shadow: 0 0 8px rgba(129, 50, 255, .3);
+}
+
+
+form button{
+
+    width: 100%;
+
+    height: 45px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: var(--cor01);
+
+    color: var(--branca);
+
+    font-size: 1em;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+form button:hover{
+
+    background-color: var(--cor02);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 15px rgba(66, 0, 141, .3);
+}
+
+form button:active{
+
+    transform: scale(.96);
+}
+
+#caixa-login p{
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: .95em;
+}
+
+#caixa-login a{
+
+    color: var(--cor02);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+#caixa-login a:hover{
+
+    color: var(--cor01);
+
+    text-decoration: underline;
+}
