@@ -8,115 +8,252 @@
     <link rel="stylesheet" href="css/style_estrutura_pagina.css">
 </head>
 <body>
+
     <main id="geral">
+
         <header id="cabecalho">
+
             <div id="logo">
                 <a href="index.html">
                     <img src="imagens/logo_atual_oficial.png" alt="Logo da Livraria Margem">
+                </a>
             </div>
 
             <nav id="menu">
                 <ul>
-                    <li><a href="paginas/cadastro.html">Casdastro</a></li>
+                    <li><a href="paginas/cadastro.html">Cadastro</a></li>
                     <li><a href="paginas/sobre.html">Sobre</a></li>
                     <li><a href="paginas/login.html">Login</a></li>
-                    <li><a href="paginas/carinho.html"><img src="imagens/carrinho.jpg" alt=""></a></li>
+
+                    <li>
+                        <a href="paginas/carrinho.html">
+                            <img src="imagens/carrinho.jpg" alt="Carrinho">
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
+
         </header>
 
         <section id="pesquisa">
-            <input type="text" name="pesquisa" id="pesquisa" class="input-pesquisa" placeholder="Digite seu produto...">
+            <input
+                type="text"
+                name="pesquisa"
+                class="input-pesquisa"
+                placeholder="Digite seu produto...">
         </section>
 
         <section id="cards">
+
             <div class="card">
-                <img src="imagens/a_hora_da_estrela.jfif" alt="livro01">
-                <p>A hora da Estrela <br> Clarice Lispector</p>
+
+                <img src="imagens/a_hora_da_estrela.jfif" alt="A Hora da Estrela">
+
+                <p>A Hora da Estrela <br> Clarice Lispector</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
+
+                <button
+                    class="btn-add"
+                    data-nome="A Hora da Estrela"
+                    data-autor="Clarice Lispector"
+                    data-preco="30.83"
+                    data-imagem="imagens/a_hora_da_estrela.jfif">
+
+                    Adicionar
+
+                </button>
+
             </div>
 
             <div class="card">
-                <img src="imagens/a_metamorfose.jfif" alt="livro02">
+
+                <img src="imagens/a_metamorfose.jfif" alt="A Metamorfose">
+
                 <p>A Metamorfose <br> Franz Kafka</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
+
+                <button
+                    class="btn-add"
+                    data-nome="A Metamorfose"
+                    data-autor="Franz Kafka"
+                    data-preco="30.83"
+                    data-imagem="imagens/a_metamorfose.jfif">
+
+                    Adicionar
+
+                </button>
 
             </div>
 
             <div class="card">
-                <img src="imagens/declinio_de_um_homem.jfif" alt="livro06">
-                <p> O Declínio de um Homem <br> Junji Ito</p>
+                
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- O Declínio de um Homem -->
+                <button
+                class="btn-add"
+                data-nome="O Declínio de um Homem"
+                data-autor="Osamu Dazai"
+                data-preco="30.83"
+                data-imagem="imagens/declinio_de_um_homem.jfif">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/carta_ao_pai.jpg" alt="livro04">
-                <p>Carta ao Pai <br> Franz Kafka</p>
+
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- Carta ao Pai -->
+                <button
+                class="btn-add"
+                data-nome="Carta ao Pai"
+                data-autor="Franz Kafka"
+                data-preco="30.83"
+                data-imagem="imagens/carta_ao_pai.jpg">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/cartas_de_um_diabo.jpg" alt="livro05">
-                <p>Cartas de um Diabo e seu Aprendiz <br> Lewis Caroll</p>
+
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- Cartas de um Diabo e seu Aprendiz -->
+                <button
+                class="btn-add"
+                data-nome="Cartas de um Diabo e seu Aprendiz"
+                data-autor="C. S. Lewis"
+                data-preco="30.83"
+                data-imagem="imagens/cartas_de_um_diabo.jpg">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/dom_casmurro.jfif" alt="livro07">
-                <p>Dom Casmurro <br> Machado de Assis</p>
+
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- Dom Casmurro -->
+                <button
+                class="btn-add"
+                data-nome="Dom Casmurro"
+                data-autor="Machado de Assis"
+                data-preco="30.83"
+                data-imagem="imagens/dom_casmurro.jfif">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/jantar_secreto.jpg" alt="livro08">
-                <p>Jantar Secreto <br> Raphael Montes</p>
+
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- Jantar Secreto -->
+                <button
+                class="btn-add"
+                data-nome="Jantar Secreto"
+                data-autor="Raphael Montes"
+                data-preco="30.83"
+                data-imagem="imagens/jantar_secreto.jpg">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/meu_pe_de_laranja_lima.jfif" alt="livro09">
-                <p>Meu Pé de Laranja Lima <br> José M. de Vasconcelos</p>
+
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- Meu Pé de Laranja Lima -->
+                <button
+                class="btn-add"
+                data-nome="Meu Pé de Laranja Lima"
+                data-autor="José Mauro de Vasconcelos"
+                data-preco="30.83"
+                data-imagem="imagens/meu_pe_de_laranja_lima.jfif">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/noites_brancas.jfif" alt="livro10">
-                <p>Noites Brancas<br> Fiódor Dotoiévski</p>
+
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
                 <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <!-- Noites Brancas -->
+                <button
+                class="btn-add"
+                data-nome="Noites Brancas"
+                data-autor="Fiódor Dostoiévski"
+                data-preco="30.83"
+                data-imagem="imagens/noites_brancas.jfif">
+                Adicionar
+                </button>
             </div>
-
+            
             <div class="card">
-                <img src="imagens/alice_in_wonderland.jpg" alt="livro03">
-                <p>Alice no País das Maravilhas <br> Lewis Caroll</p>
-                <h2>R$ 30,83</h2>
-                <button class="btn-add">Adicionar</button>
 
+                <img src="imagens/declinio_de_um_homem.jfif" alt="O declinio de um homem">
+
+                <p>O Declínio de um Homem <br> Junji Ito</p>
+
+                <h2>R$ 30,83</h2>
+
+                <!-- Alice no País das Maravilhas -->
+                <button
+                class="btn-add"
+                data-nome="Alice no País das Maravilhas"
+                data-autor="Lewis Carroll"
+                data-preco="30.83"
+                data-imagem="imagens/alice_in_wonderland.jpg">
+                Adicionar
+                </button>
             </div>
+            
 
         </section>
 
         <footer id="rodape">
-            <h2>&copy 2026 Livraria Margem S.A. Todos os direitos resevados</h2>
+
+            <h2>&copy; 2026 Livraria Margem S.A. Todos os direitos reservados</h2>
+
             <p>Formas de pagamento: Pix, Cartões de Crédito e Débito</p>
+
         </footer>
 
     </main>
-    
+
+    <script src="js/produtos.js"></script>
+
 </body>
 </html>
