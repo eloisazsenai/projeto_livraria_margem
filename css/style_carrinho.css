@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+#titulo-carrinho{
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#titulo-carrinho h1{
+    font-size: 2.5em;
+    color: var(--cor01);
+    letter-spacing: 3px;
+}
+
+#listaCarrinho{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.item-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+
+    border-radius: 10px;
+    padding: 20px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+
+    transition: .3s;
+}
+
+.item-carrinho:hover{
+    transform: translateY(-3px);
+}
+
+.item-carrinho img{
+    width: 130px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.informacoes{
+    flex: 1;
+    margin-left: 30px;
+}
+
+.informacoes h2{
+    color: var(--cor01);
+    margin-bottom: 15px;
+}
+
+.informacoes p{
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+.item-carrinho button{
+
+    width: 150px;
+    height: 40px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: var(--cor01);
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.item-carrinho button:hover{
+
+    background-color: var(--cor02);
+
+    transform: scale(1.05);
+}
+
+#resumo{
+
+    width: 350px;
+
+    margin-bottom: 50px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+
+    align-self: flex-end;
+}
+
+#resumo h2{
+
+    color: var(--cor01);
+
+    margin-bottom: 20px;
+}
+
+#total{
+
+    font-size: 1.4em;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.btn-finalizar{
+
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: var(--cor01);
+
+    color: white;
+
+    font-size: 1em;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-finalizar:hover{
+
+    background-color: var(--cor02);
+
+    transform: scale(1.03);
+}
+
+
+#listaCarrinho h2{
+
+    text-align: center;
+
+    color: var(--cor01);
+}
+
+#listaCarrinho a{
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: var(--cor02);
+
+    font-weight: bold;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#geral{
+    flex: 1;
+}
+
+#rodape{
+    margin-top: auto;
+    width: 100%;
+}
