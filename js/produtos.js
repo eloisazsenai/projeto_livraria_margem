@@ -1,35 +1,87 @@
-const botoes = document.querySelectorAll(".btn-add");
+//IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
+import { produtos } from './lista_produtos.js'
 
-botoes.forEach(botao => {
+//PEGANDO ELEMENTOS DO DOM
+const sectionCards = document.querySelector('#cards')
 
-    botao.addEventListener("click", () => {
+//CARREGANDO OS CARDS
+const listarProdutos = () => {
+    //LIMPANDO A SECTION cards
+    sectionCards.innerHTML = ''
 
-        const produto = {
-            nome: botao.dataset.nome,
-            autor: botao.dataset.autor,
-            preco: Number(botao.dataset.preco),
-            imagem: botao.dataset.imagem,
-            quantidade: 1
-        };
+    //PERCORRENDO O ARRAY DE PRODUTOS
+    produtos.forEach((elem, i) => {
+        //CRIANDO O ELEMENTO div E DEFININDO O ATRIBUTO CARD
+        const divCard = document.createElement('div')
+        divCard.setAttribute('class', 'card')
 
-        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        //CRIANDO O ELEMENTO img E DEFININDO OS ATRIBUTOS SRC E ALT OS VALORES DO CAMINHO DAS IMAGENS E A DESCRIÇÃO DOS PRODUTOS
+        const imgCard = document.createElement('img')
+        imgCard.setAttribute('src', elem.caminho_imagem)
+        imgCard.setAttribute('alt', elem.descricao_produto)
 
-        const produtoExistente = carrinho.find(item => item.nome === produto.nome);
+        //CRIANDO O ELEMENTO p E ATRIBUINDO A DESCRIÇÃO DOS PRODUTOS
+        const pCard = document.createElement('p')
+        pCard.innerHTML = elem.descricao_produto
 
-        if (produtoExistente) {
+        //CRIANDO O ELEMENTO h2 E ATRIBUINDO O VALOR UNITÁRIO DEIXANDO EM DUAS CASAS DECIMAIS E SUBSTITUINDO PONTO POR VÍRGULA
+        const h2Card = document.createElement('h2')
+        h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
 
-            produtoExistente.quantidade++;
+        //CRIANDO O ELEMENTO button E DEFININDO OS ATRIBUTOS CLASS E A DESCRIÇÃO ADICONAR
+        const btnCard = document.createElement('button')
+        btnCard.setAttribute('class', 'btn-add')
+        btnCard.innerHTML = 'Adicionar'
 
-        } else {
+        //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
+        divCard.appendChild(imgCard)
+        divCard.appendChild(pCard)
+        divCard.appendChild(h2Card)
+        divCard.appendChild(btnCard)
 
-            carrinho.push(produto);
+        //ADICIONANDO O divCard A SECTION CARDS
+        sectionCards.appendChild(divCard)
 
-        }
+    })
 
-        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
 
-        alert(`${produto.nome} foi adicionado ao carrinho!`);
+//CHAMANDO A FUNÇÃO listarProdutos
+listarProdutos()
 
-    });
+//MONTANDO OS MENUS SEÇÕES
+const menuSecoes = () => {
+    const mapSecoes = new Map()
 
-});
+    produtos.forEach((elem)=>{
+        mapSecoes.set(elem.id_secao, elem)
+    })
+
+    const secoesFiltradas = Array.from(mapSecoes.values())
+
+    console.log(secoesFiltradas)
+
+    return secoesFiltradas
+}
+
+//FUNÇÃO PARA INSERIR OS MENUS NA LISTA
+const carregaSecoes = () =>{
+    const ulMenuSecoes = document.querySelector('#menu-secoes')
+
+    ulMenuSecoes.innerHTML = ''
+
+    menuSecoes().forEach((elem, i)=>{
+        const liMenu = document.createElement('li')
+    
+        const aMenu = document.createElement('a')
+        aMenu.setAttribute('href', '#')
+        aMenu.setAttribute('class' , 'lnk-secao')
+        aMenu.innerHTML = elem.secao
+
+        liMenu.appendChild(aMenu)
+        
+        ulMenuSecoes.appendChild(liMenu)
+    })
+}
+
+carregaSecoes()
