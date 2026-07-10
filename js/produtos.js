@@ -73,15 +73,27 @@ const carregaSecoes = () =>{
     menuSecoes().forEach((elem, i)=>{
         const liMenu = document.createElement('li')
     
+        //CRIANDO O ELEMENTO a ATRIBUINDO O NOME DA SEÇÃO
         const aMenu = document.createElement('a')
         aMenu.setAttribute('href', '#')
         aMenu.setAttribute('class' , 'lnk-secao')
         aMenu.innerHTML = elem.secao
 
+        aMenu.addEventListener('click', ()=>{
+            filtroProduto.apply(elem.idSecao)
+        })
+
+        //ADICIONANDO O ELEMENTO DO FILHO a NO li
         liMenu.appendChild(aMenu)
         
+        //ADICIONANDO O ELEMENTO FILHO liMenu NO OBJETO DOM
         ulMenuSecoes.appendChild(liMenu)
     })
 }
 
 carregaSecoes()
+
+//FUNÇÃO FILTRO PRODUTO
+const filtroProduto = (idSecao)=>{
+    return produtos.filter(elem => elem.id_secao === idSecao)
+}
