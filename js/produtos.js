@@ -5,12 +5,12 @@ import { produtos } from './lista_produtos.js'
 const sectionCards = document.querySelector('#cards')
 
 //CARREGANDO OS CARDS
-const listarProdutos = () => {
+const listarProdutos = (lista = produtos) => {
     //LIMPANDO A SECTION cards
     sectionCards.innerHTML = ''
 
     //PERCORRENDO O ARRAY DE PRODUTOS
-    produtos.forEach((elem, i) => {
+    lista.forEach((elem) => {
         //CRIANDO O ELEMENTO div E DEFININDO O ATRIBUTO CARD
         const divCard = document.createElement('div')
         divCard.setAttribute('class', 'card')
@@ -51,49 +51,71 @@ listarProdutos()
 
 //MONTANDO OS MENUS SEÇÕES
 const menuSecoes = () => {
+    //CRIANDO A COLEÇÃO MAP    
     const mapSecoes = new Map()
 
+    //PERCORRENDO O ARRAY PRODUTO
     produtos.forEach((elem)=>{
+        //SELECIONANDO AS SEÇÕES
         mapSecoes.set(elem.id_secao, elem)
     })
-
+    
+    //CONVERTENDO MAP EM ARRAY
     const secoesFiltradas = Array.from(mapSecoes.values())
 
-    console.log(secoesFiltradas)
-
+    //RETORNANDO O ARRAY SELECIONADO
     return secoesFiltradas
 }
 
 //FUNÇÃO PARA INSERIR OS MENUS NA LISTA
-const carregaSecoes = () =>{
-    const ulMenuSecoes = document.querySelector('#menu-secoes')
+const carregaSecoes = () => {
 
-    ulMenuSecoes.innerHTML = ''
+    const ulMenuSecoes = document.querySelector('#menu-secoes');
 
-    menuSecoes().forEach((elem, i)=>{
-        const liMenu = document.createElement('li')
-    
-        //CRIANDO O ELEMENTO a ATRIBUINDO O NOME DA SEÇÃO
-        const aMenu = document.createElement('a')
-        aMenu.setAttribute('href', '#')
-        aMenu.setAttribute('class' , 'lnk-secao')
-        aMenu.innerHTML = elem.secao
+    //LIMPANDO O ELEMENDO DO DOM
+    ulMenuSecoes.innerHTML = '';
 
-        aMenu.addEventListener('click', ()=>{
-            filtroProduto.apply(elem.idSecao)
-        })
+    const li = document.createElement("li");
+    const a = document.createElement("a");
 
-        //ADICIONANDO O ELEMENTO DO FILHO a NO li
-        liMenu.appendChild(aMenu)
-        
-        //ADICIONANDO O ELEMENTO FILHO liMenu NO OBJETO DOM
-        ulMenuSecoes.appendChild(liMenu)
-    })
+    a.href = "#";
+    a.className = "lnk-secao";
+    a.innerHTML = "Todos";
+
+    a.addEventListener("click", (e) => {
+        e.preventDefault();
+        listarProdutos();
+    });
+
+    li.appendChild(a);
+    ulMenuSecoes.appendChild(li);
+
+    menuSecoes().forEach((elem) => {
+
+        const liMenu = document.createElement('li');
+
+        const aMenu = document.createElement('a');
+        aMenu.href = '#';
+        aMenu.className = 'lnk-secao';
+        aMenu.innerHTML = elem.secao;
+
+        aMenu.addEventListener('click', (e) => {
+            e.preventDefault();
+            filtroProduto(elem.id_secao);
+        });
+
+        liMenu.appendChild(aMenu);
+        ulMenuSecoes.appendChild(liMenu);
+    });
+
 }
 
 carregaSecoes()
 
 //FUNÇÃO FILTRO PRODUTO
-const filtroProduto = (idSecao)=>{
-    return produtos.filter(elem => elem.id_secao === idSecao)
+const filtroProduto = (idSecao) => {
+
+    const produtosFiltrados = produtos.filter(elem => elem.id_secao === idSecao);
+
+    listarProdutos(produtosFiltrados);
 }
