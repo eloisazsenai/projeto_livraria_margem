@@ -232,11 +232,13 @@
 
 #menu-secoes a:link,
 #menu-secoes a:visited{
-    font-size: 1.4em;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 5px;
     text-decoration: none;
     color: rgb(250, 244, 255);
+    text-align: center;
+    margin-right: 40px;
 }
 
 #menu-secoes a{
