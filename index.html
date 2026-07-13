@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="css/style_estrutura_pagina.css">
     <script src="js/produtos.js" type="module" defer></script>
 </head>
-<body>
 
-    <main id="geral">
+<body>
 
         <header id="cabecalho">
 
@@ -22,14 +21,15 @@
 
             <nav id="menu">
                 <ul>
-                    <li><a href="paginas/cadastro.html">Cadastro</a></li>
-                    <li><a href="paginas/sobre.html">Sobre</a></li>
-                    <li><a href="paginas/login.html">Login</a></li>
+                    <li><a href="paginas/cadastro.html" aria-label="Ir para cadastro">Cadastro</a></li>
+                    <li><a href="paginas/sobre.html" aria-label="Ver sobre">Sobre</a></li>
+                    <li><a href="paginas/login.html" aria-label="Ir para login">Login</a></li>
 
                     <li>
-                        <a href="paginas/carrinho.html">
-                            <img src="imagens/carrinho.jpg" alt="Carrinho">
+                        <a href="paginas/carrinho.html" aria-label="Abrir carrinho">
+                            <img src="imagens/carrinho.jpg" alt="">
                         </a>
+                        <span id="contador-carrinho" aria-label="0 itens no carrinho">0</span>
                     </li>
 
                 </ul>
@@ -37,25 +37,36 @@
 
         </header>
 
-        <section id="pesquisa">
-            <input
-                type="text"
-                name="pesquisa"
-                class="input-pesquisa"
-                placeholder="Digite seu produto...">
-        </section>
+        <main id="geral">
 
-        <section id="secoes-produtos">
-            <ul id="menu-secoes">
-                <li><a href="#" class="lnk-secao">Seção 01</a></li>
-                <li><a href="#" class="lnk-secao">Seção 02</a></li>
-                <li><a href="#" class="lnk-secao">Seção 03</a></li>
-                <li><a href="#" class="lnk-secao">Seção 04</a></li>
-                <li><a href="#" class="lnk-secao">Seção 05</a></li>
-            </ul>
-        </section>
+            <section id="pesquisa">
 
-        <section id="cards" aria-label="Lista de livros"></section>
+                <label for="campo-pesquisa" class="sr-only">
+                    Pesquisar livros
+                </label>
+
+                <input
+                    type="search"
+                    id="campo-pesquisa"
+                    name="pesquisa"
+                    class="input-pesquisa"
+                    placeholder="Pesquise por título..."
+                    autocomplete="off">
+            </section>
+
+            <section id="secoes-produtos">
+                <ul id="menu-secoes">
+                    <li><a href="#" class="lnk-secao">Seção 01</a></li>
+                    <li><a href="#" class="lnk-secao">Seção 02</a></li>
+                    <li><a href="#" class="lnk-secao">Seção 03</a></li>
+                    <li><a href="#" class="lnk-secao">Seção 04</a></li>
+                    <li><a href="#" class="lnk-secao">Seção 05</a></li>
+                </ul>
+            </section>
+
+            <section id="cards" aria-label="Lista de livros"></section>
+
+        </main>
 
         <footer id="rodape">
 
@@ -64,10 +75,6 @@
             <p>Formas de pagamento: Pix, Cartões de Crédito e Débito</p>
 
         </footer>
-
-    </main>
-
-    <script src="js/adicionar_carrinho.js"></script>
 
 </body>
 </html>
