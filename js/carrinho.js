@@ -1,62 +1,120 @@
-const listaCarrinho = document.getElementById("listaCarrinho");
-const total = document.getElementById("total");
+const listaCarrinho = document.getElementById('listaCarrinho');
+const total = document.getElementById('total');
+const resumo = document.getElementById('resumo');
+const btnEsvaziar = document.getElementById('btn-esvaziar');
 
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-let valorTotal = 0;
+const formatarMoeda = valor => valor.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+});
 
-if (carrinho.length === 0) {
+const salvarCarrinho = () => {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+};
 
-    listaCarrinho.innerHTML = `
-        <h2>Seu carrinho está vazio.</h2>
-        <a href="../index.html">Voltar para a loja</a>
-    `;
+const obterChaveProduto = produto => produto.id ?? produto.nome;
 
-} else {
+const criarBotao = (texto, descricao, aoClicar, classe = '') => {
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.textContent = texto;
+    botao.setAttribute('aria-label', descricao);
+    botao.className = classe;
+    botao.addEventListener('click', aoClicar);
+    return botao;
+};
 
-    carrinho.forEach((produto, indice) => {
+const alterarQuantidade = (idProduto, variacao) => {
+    const produto = carrinho.find(item => obterChaveProduto(item) === idProduto);
+    if (!produto) return;
 
-        valorTotal += produto.preco * produto.quantidade;
+    produto.quantidade += variacao;
+    if (produto.quantidade <= 0) {
+        carrinho = carrinho.filter(item => obterChaveProduto(item) !== idProduto);
+    }
 
-        listaCarrinho.innerHTML += `
-            <div class="item-carrinho">
+    salvarCarrinho();
+    renderizarCarrinho();
+};
 
-                <img src="../${produto.imagem}" alt="${produto.nome}">
+const removerItem = idProduto => {
+    carrinho = carrinho.filter(item => obterChaveProduto(item) !== idProduto);
+    salvarCarrinho();
+    renderizarCarrinho();
+};
 
-                <div class="informacoes">
+const criarItemCarrinho = produto => {
+    const item = document.createElement('article');
+    item.className = 'item-carrinho';
 
-                    <h2>${produto.nome}</h2>
+    const imagem = document.createElement('img');
+    imagem.src = `../${produto.imagem}`;
+    imagem.alt = `Capa do livro ${produto.nome}`;
 
-                    <p><strong>Autor:</strong> ${produto.autor}</p>
+    const informacoes = document.createElement('div');
+    informacoes.className = 'informacoes';
 
-                    <p><strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}</p>
+    const nome = document.createElement('h2');
+    nome.textContent = produto.nome;
 
-                    <p><strong>Quantidade:</strong> ${produto.quantidade}</p>
+    const autor = document.createElement('p');
+    autor.textContent = `Autor: ${produto.autor}`;
 
-                </div>
+    const preco = document.createElement('p');
+    preco.textContent = `Preço unitário: ${formatarMoeda(produto.preco)}`;
 
-                <button onclick="removerItem(${indice})">
-                    Remover
-                </button>
+    const subtotal = document.createElement('p');
+    subtotal.textContent = `Subtotal: ${formatarMoeda(produto.preco * produto.quantidade)}`;
 
-            </div>
+    const controles = document.createElement('div');
+    controles.className = 'controles-quantidade';
 
-            <hr>
-        `;
-    });
+    const chaveProduto = obterChaveProduto(produto);
+    const diminuir = criarBotao('−', `Diminuir quantidade de ${produto.nome}`, () => alterarQuantidade(chaveProduto, -1));
+    const quantidade = document.createElement('span');
+    quantidade.textContent = produto.quantidade;
+    quantidade.setAttribute('aria-label', `Quantidade: ${produto.quantidade}`);
+    const aumentar = criarBotao('+', `Aumentar quantidade de ${produto.nome}`, () => alterarQuantidade(chaveProduto, 1));
 
-    total.innerHTML = `Total: R$ ${valorTotal.toFixed(2)}`;
+    controles.append(diminuir, quantidade, aumentar);
+    informacoes.append(nome, autor, preco, subtotal, controles);
 
+    const remover = criarBotao('Remover', `Remover ${produto.nome} do carrinho`, () => removerItem(chaveProduto), 'btn-remover');
+    item.append(imagem, informacoes, remover);
+    return item;
+};
+
+function renderizarCarrinho() {
+    listaCarrinho.replaceChildren();
+
+    if (carrinho.length === 0) {
+        const mensagem = document.createElement('h2');
+        mensagem.textContent = 'Seu carrinho está vazio.';
+        const link = document.createElement('a');
+        link.href = '../index.html';
+        link.textContent = 'Voltar para a loja';
+        listaCarrinho.append(mensagem, link);
+        resumo.hidden = true;
+        return;
+    }
+
+    carrinho.forEach(produto => listaCarrinho.appendChild(criarItemCarrinho(produto)));
+
+    const valorTotal = carrinho.reduce(
+        (soma, produto) => soma + produto.preco * produto.quantidade,
+        0
+    );
+
+    total.textContent = `Total: ${formatarMoeda(valorTotal)}`;
+    resumo.hidden = false;
 }
 
-function removerItem(indice) {
+btnEsvaziar.addEventListener('click', () => {
+    carrinho = [];
+    localStorage.removeItem('carrinho');
+    renderizarCarrinho();
+});
 
-    carrinho.splice(indice, 1);
-
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
-    location.reload();
-
-}
-
-console.log(produto);
+renderizarCarrinho();
