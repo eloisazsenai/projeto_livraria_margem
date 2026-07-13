@@ -186,3 +186,11 @@ const atualizarContadorCarrinho = () => {
 
     contadorCarrinho.hidden = quantidadeTotal === 0;
 };
+
+localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+atualizarContadorCarrinho();
+
+alert(`${produtoCarrinho.nome} foi adicionado ao carrinho!`);
+
+atualizarContadorCarrinho();
