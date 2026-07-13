@@ -29,10 +29,17 @@ const listarProdutos = (lista = produtos) => {
         h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
 
         //CRIANDO O ELEMENTO button E DEFININDO OS ATRIBUTOS CLASS E A DESCRIÇÃO ADICONAR
-        const btnCard = document.createElement('button')
-        btnCard.setAttribute('class', 'btn-add')
-        btnCard.innerHTML = 'Adicionar'
+        const btnCard = document.createElement('button');
 
+        btnCard.setAttribute('class', 'btn-add');
+        btnCard.innerHTML = 'Adicionar';
+
+        // Dados usados pelo carrinho
+        btnCard.dataset.nome = elem.descricao_produto;
+        btnCard.dataset.autor = elem.autor;
+        btnCard.dataset.preco = elem.valor_unitario;
+        btnCard.dataset.imagem = elem.caminho_imagem;
+        
         //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
         divCard.appendChild(imgCard)
         divCard.appendChild(pCard)
