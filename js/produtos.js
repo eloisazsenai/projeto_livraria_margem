@@ -34,11 +34,32 @@ const listarProdutos = (lista = produtos) => {
         btnCard.setAttribute('class', 'btn-add');
         btnCard.innerHTML = 'Adicionar';
 
-        // Dados usados pelo carrinho
-        btnCard.dataset.nome = elem.descricao_produto;
-        btnCard.dataset.autor = elem.autor;
-        btnCard.dataset.preco = elem.valor_unitario;
-        btnCard.dataset.imagem = elem.caminho_imagem;
+        btnCard.addEventListener('click', () => {
+            const produtoCarrinho = {
+                id: elem.id_produto,
+                nome: elem.descricao_produto,
+                autor: elem.autor,
+                preco: elem.valor_unitario,
+                imagem: elem.caminho_imagem,
+                quantidade: 1
+            };
+
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            const produtoExistente = carrinho.find(
+                produto => produto.id === produtoCarrinho.id
+            );
+
+            if (produtoExistente) {
+                produtoExistente.quantidade++;
+            } else {
+                carrinho.push(produtoCarrinho);
+            }
+
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            alert(`${produtoCarrinho.nome} foi adicionado ao carrinho!`);
+        });
         
         //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
         divCard.appendChild(imgCard)
@@ -126,3 +147,42 @@ const filtroProduto = (idSecao) => {
 
     listarProdutos(produtosFiltrados);
 }
+
+
+//PESQUISA DE PRODUTOS
+const campoPesquisa = document.querySelector("#campo-pesquisa");
+
+campoPesquisa.addEventListener("input", () => {
+    const termo = campoPesquisa.value.trim().toLocaleLowerCase("pt-BR");
+
+    const resultado = produtos.filter(produto =>
+        produto.descricao_produto
+            .toLocaleLowerCase("pt-BR")
+            .includes(termo)
+    );
+
+    listarProdutos(resultado);
+});
+
+
+//FUNÇÃO CONTADOR DO CARRINHO
+const contadorCarrinho = document.querySelector('#contador-carrinho');
+
+const atualizarContadorCarrinho = () => {
+    const carrinho =
+        JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    const quantidadeTotal = carrinho.reduce(
+        (total, produto) => total + produto.quantidade,
+        0
+    );
+
+    contadorCarrinho.textContent = quantidadeTotal;
+
+    contadorCarrinho.setAttribute(
+        'aria-label',
+        `${quantidadeTotal} itens no carrinho`
+    );
+
+    contadorCarrinho.hidden = quantidadeTotal === 0;
+};
