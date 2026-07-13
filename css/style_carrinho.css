@@ -13,7 +13,7 @@
 }
 
 #listaCarrinho{
-    width: 1000px;
+    width: min(1000px, calc(100% - 40px));
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -61,7 +61,7 @@
     font-size: 1.1em;
 }
 
-.item-carrinho button{
+.btn-remover{
 
     width: 150px;
     height: 40px;
@@ -78,7 +78,7 @@
     transition: .3s;
 }
 
-.item-carrinho button:hover{
+.btn-remover:hover{
 
     background-color: var(--cor02);
 
@@ -87,9 +87,9 @@
 
 #resumo{
 
-    width: 350px;
+    width: min(350px, calc(100% - 40px));
 
-    margin-bottom: 50px;
+    margin: 0 20px 50px 0;
 
     padding: 25px;
 
@@ -150,6 +150,46 @@
     transform: scale(1.03);
 }
 
+#btn-esvaziar{
+    width: 100%;
+    height: 45px;
+    margin-top: 12px;
+    border: 2px solid var(--cor01);
+    border-radius: 6px;
+    background-color: white;
+    color: var(--cor01);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btn-esvaziar:hover{
+    background-color: var(--cor03);
+}
+
+.controles-quantidade{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.controles-quantidade button{
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--cor01);
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.controles-quantidade span{
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 #listaCarrinho h2{
 
@@ -182,4 +222,25 @@ body{
 #rodape{
     margin-top: auto;
     width: 100%;
+}
+
+@media (max-width: 700px){
+    .item-carrinho{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .informacoes{
+        margin-left: 0;
+    }
+
+    .controles-quantidade{
+        justify-content: center;
+    }
+
+    #resumo{
+        align-self: center;
+        margin-right: 0;
+    }
 }
