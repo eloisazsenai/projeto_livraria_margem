@@ -33,7 +33,7 @@ const listarProdutos = (lista = produtos) => {
 
         btnCard.setAttribute('class', 'btn-add');
         btnCard.innerHTML = 'Adicionar';
-
+        //monta o produto
         btnCard.addEventListener('click', () => {
             const produtoCarrinho = {
                 id: elem.id_produto,
@@ -43,7 +43,7 @@ const listarProdutos = (lista = produtos) => {
                 imagem: elem.caminho_imagem,
                 quantidade: 1
             };
-
+            //adiciona ao array do carrinho
             const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
             const produtoExistente = carrinho.find(
@@ -57,6 +57,8 @@ const listarProdutos = (lista = produtos) => {
             }
 
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            atualizarContadorCarrinho();
 
             alert(`${produtoCarrinho.nome} foi adicionado ao carrinho!`);
         });
@@ -186,11 +188,5 @@ const atualizarContadorCarrinho = () => {
 
     contadorCarrinho.hidden = quantidadeTotal === 0;
 };
-
-localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-atualizarContadorCarrinho();
-
-alert(`${produtoCarrinho.nome} foi adicionado ao carrinho!`);
 
 atualizarContadorCarrinho();
