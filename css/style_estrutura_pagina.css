@@ -113,6 +113,13 @@ body{
     outline: none;
 }
 
+#pesquisa, label{
+    color: var(--branca);
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: Roboto;
+}
+
 /* MENU DE SEÇÕES */
 #secoes-produtos{
     width: 100%;
@@ -132,7 +139,7 @@ body{
     list-style: none;
     width: 100%;
     gap: 20px;
-    flex-wrap: nowrap; /* remover se der errado */
+    flex-wrap: wrap; /* remover se der errado */
 }
 #menu-secoes li{
     flex: 0 1 auto;
@@ -191,7 +198,7 @@ body{
 }
 
 .card p{
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
     margin: 20px 0;
     text-align: center;
@@ -199,6 +206,8 @@ body{
 
 .card h2{
     color: var(--cor02);
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .card button{
