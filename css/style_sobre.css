@@ -82,6 +82,13 @@
     color: var(--cor01);
 }
 
+#menu a[aria-current="page"]:not(.link-carrinho){
+    color: var(--cor01);
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
 #div-sobre{
     width: 650px;
     margin: 20px 0;
