@@ -1,13 +1,24 @@
 //IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
 import { produtos } from './lista_produtos.js'
 
-//PEGANDO ELEMENTOS DO DOM
-const sectionCards = document.querySelector('#cards')
+//VARIÁVEIS
+let secaoSelecionada = 'Todos';
+
+const sectionCards = document.querySelector('#cards');
+const campoPesquisa = document.querySelector('#campo-pesquisa');
 
 //CARREGANDO OS CARDS
 const listarProdutos = (lista = produtos) => {
     //LIMPANDO A SECTION cards
     sectionCards.innerHTML = ''
+
+    if (lista.length === 0) {
+        const mensagem = document.createElement('p')
+        mensagem.className = 'mensagem-sem-resultados'
+        mensagem.textContent = 'Nenhum livro encontrado.'
+        sectionCards.appendChild(mensagem)
+        return
+    }
 
     //PERCORRENDO O ARRAY DE PRODUTOS
     lista.forEach((elem) => {
@@ -114,7 +125,8 @@ const carregaSecoes = () => {
 
     a.addEventListener("click", (e) => {
         e.preventDefault();
-        listarProdutos();
+        secaoSelecionada = 'Todos';
+        aplicarFiltros();
     });
 
     li.appendChild(a);
@@ -131,7 +143,8 @@ const carregaSecoes = () => {
 
         aMenu.addEventListener('click', (e) => {
             e.preventDefault();
-            filtroProduto(elem.id_secao);
+            secaoSelecionada = elem.id_secao;
+            aplicarFiltros();
         });
 
         liMenu.appendChild(aMenu);
@@ -143,28 +156,35 @@ const carregaSecoes = () => {
 carregaSecoes()
 
 //FUNÇÃO FILTRO PRODUTO
-const filtroProduto = (idSecao) => {
-
-    const produtosFiltrados = produtos.filter(elem => elem.id_secao === idSecao);
-
-    listarProdutos(produtosFiltrados);
-}
-
-
 //PESQUISA DE PRODUTOS
-const campoPesquisa = document.querySelector("#campo-pesquisa");
+const normalizarTexto = texto =>
+    texto
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase('pt-BR');
 
-campoPesquisa.addEventListener("input", () => {
-    const termo = campoPesquisa.value.trim().toLocaleLowerCase("pt-BR");
+const aplicarFiltros = () => {
+    const termo = normalizarTexto(campoPesquisa.value.trim());
 
-    const resultado = produtos.filter(produto =>
-        produto.descricao_produto
-            .toLocaleLowerCase("pt-BR")
-            .includes(termo)
-    );
+    const resultado = produtos.filter(produto => {
+        const titulo = normalizarTexto(produto.descricao_produto);
+        const autor = normalizarTexto(produto.autor);
+
+        const correspondePesquisa =
+            titulo.includes(termo) ||
+            autor.includes(termo);
+
+        const correspondeSecao =
+            secaoSelecionada === 'Todos' ||
+            produto.id_secao === secaoSelecionada;
+
+        return correspondePesquisa && correspondeSecao;
+    });
 
     listarProdutos(resultado);
-});
+};
+
+campoPesquisa.addEventListener('input', aplicarFiltros);
 
 
 //FUNÇÃO CONTADOR DO CARRINHO
