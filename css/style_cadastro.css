@@ -1,187 +1,173 @@
 @import url(style_estrutura_pagina.css);
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+body{
+    background: linear-gradient(135deg, #faf7ff, #eee4ff);
 }
 
 #geral{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
 }
-
-#cabecalho{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-}
-
-#logo img{
-    height: 120px;
-    width: auto;
-}
-
-#menu ul{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-#menu img{
-    width: 35px;
-    height: 35px;
-}
-
-/* ===== MENU ===== */
-
-#menu a:link,
-#menu a:visited{
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-decoration: none;
-    color: var(--cor02);
-}
-
-#menu a{
-    display: inline-block;
-    transition: .3s;
-}
-
-#menu a:hover{
-    transform: translateY(-4px);
-    color: var(--cor01);
-}
-
-#menu a[aria-current="page"]:not(.link-carrinho){
-    color: var(--cor01);
-    font-weight: bold;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-}
-
-/* ===== FORMULÁRIO ===== */
 
 #div-form{
-    width: 650px;
-    margin: 40px 0;
-    background: rgb(190, 130, 245);
-    border-radius: 10px;
+    width: min(900px, calc(100% - 40px));
+    margin: 50px auto;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    background-color: white;
+    border: 1px solid rgba(129, 50, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(66, 0, 141, 0.15);
 }
 
-h3{
+#div-form > h1{
+    padding: 22px;
+    background: linear-gradient(135deg, var(--cor01), var(--cor02));
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
-    background: #42008d;
-    color: white;
-    padding: 15px;
-    letter-spacing: 2px;
-    font-size: 1.8rem;
 }
 
 #form-cadastro{
-    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+    padding: 36px;
 }
 
-label{
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    color: rgb(79, 4, 150);
-    font-weight: bold;
+.campo{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
 
-input{
+.campo-largo{
+    grid-column: 1 / -1;
+}
+
+#form-cadastro label{
+    color: var(--cor01);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+#form-cadastro input:not([type="checkbox"]){
     width: 100%;
-    height: 42px;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
+    height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #d9cbea;
+    border-radius: 8px;
+    background-color: #fcfaff;
+    color: #30243f;
+    font-size: 1rem;
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
 
-input:focus{
-    outline: 2px solid #42008d;
+#form-cadastro input::placeholder{
+    color: #9285a2;
 }
 
-/* ===== CHECKBOX ===== */
+#form-cadastro input:not([type="checkbox"]):focus{
+    border-color: var(--cor02);
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(129, 50, 255, 0.15);
+}
 
 .checkbox{
+    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: #f7f1ff;
 }
 
 .checkbox input{
     width: 18px;
     height: 18px;
+    accent-color: var(--cor01);
 }
 
 .checkbox label{
-    margin: 0;
-    color: rgb(79, 4, 150);
-    font-size: 15px;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 #div-btn{
+    grid-column: 1 / -1;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 8px;
 }
 
-button{
-    width: 180px;
-    height: 42px;
+#div-btn button{
+    min-width: 160px;
+    height: 44px;
+    padding: 0 20px;
     border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: .3s;
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+#div-btn button:hover{
+    transform: translateY(-2px);
 }
 
 #btn-cadastrar{
-    background: #42008d;
+    background: var(--cor01);
     color: white;
+    box-shadow: 0 6px 16px rgba(66, 0, 141, 0.22);
 }
 
 #btn-cadastrar:hover{
-    background: #5b15bb;
+    background: var(--cor02);
 }
 
 #btn-limpar{
-    background: #e8e8e8;
-    color: #333;
+    border: 1px solid #d9cbea !important;
+    background: white;
+    color: var(--cor01);
 }
 
 #btn-limpar:hover{
-    background: #d5d5d5;
+    background: #f3ebff;
 }
 
 #rodape{
-    width: 100%;
-    height: 180px;
-    margin-top: 40px;
-    background: #42008d;
-    color: var(--branca);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    padding: 20px;
+    margin-top: auto;
+}
+
+@media (max-width: 700px){
+    #div-form{
+        width: min(100% - 24px, 900px);
+        margin: 28px auto;
+    }
+
+    #div-form > h1{
+        font-size: 1.45rem;
+    }
+
+    #form-cadastro{
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+    }
+
+    .campo-largo,
+    .checkbox,
+    #div-btn{
+        grid-column: auto;
+    }
+
+    #div-btn{
+        flex-direction: column-reverse;
+    }
+
+    #div-btn button{
+        width: 100%;
+    }
 }
