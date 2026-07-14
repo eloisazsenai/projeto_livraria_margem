@@ -65,7 +65,7 @@ projeto_livraria_margem/
 1. Clone este repositório:
 
 ```bash
-git https://github.com/eloisazsenai/projeto_livraria_margem.git
+git clone https://github.com/eloisazsenai/projeto_livraria_margem.git
 ```
 
 2. Entre na pasta do projeto:
