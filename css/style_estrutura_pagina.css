@@ -60,7 +60,8 @@ body{
     list-style: none;
 }
 
-#menu a{
+/* Links de texto do menu */
+#menu a:not(.link-carrinho){
     display: inline-block;
     font-size: 1.4em;
     text-transform: uppercase;
@@ -70,16 +71,16 @@ body{
     transition: transform .3s ease, color .3s ease;
 }
 
-#menu a:visited{
+#menu a:not(.link-carrinho):visited{
     color: var(--cor02);
 }
 
-#menu a:hover{
+#menu a:not(.link-carrinho):hover{
     transform: translateY(-5px);
     color: var(--cor01);
 }
 
-#menu a:active{
+#menu a:not(.link-carrinho):active{
     color: var(--cor01);
 }
 
@@ -286,3 +287,44 @@ body{
     }
 }
 
+/* Link do carrinho */
+.link-carrinho{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+/* Ícone */
+.link-carrinho img{
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* Contador */
+#contador-carrinho{
+    position: absolute;
+
+    top: -5px;
+    right: -8px;
+
+    min-width: 18px;
+    height: 18px;
+    padding: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: var(--cor01);
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+}
