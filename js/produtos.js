@@ -32,12 +32,22 @@ const listarProdutos = (lista = produtos) => {
         imgCard.setAttribute('alt', elem.descricao_produto)
 
         //CRIANDO O ELEMENTO p E ATRIBUINDO A DESCRIÇÃO DOS PRODUTOS
-        const pCard = document.createElement('p')
-        pCard.innerHTML = elem.descricao_produto
+        const tituloCard = document.createElement('h2');
+        tituloCard.textContent = elem.descricao_produto;
+
+        //CRIANDO ELEMENTO H2 E ATRIBUINDO AUTOR
+        const autorCard = document.createElement('p');
+        autorCard.textContent = elem.autor;
 
         //CRIANDO O ELEMENTO h2 E ATRIBUINDO O VALOR UNITÁRIO DEIXANDO EM DUAS CASAS DECIMAIS E SUBSTITUINDO PONTO POR VÍRGULA
-        const h2Card = document.createElement('h2')
-        h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
+        const precoCard = document.createElement('p');
+        precoCard.textContent = elem.valor_unitario.toLocaleString(
+            'pt-BR',
+            {
+                style: 'currency',
+                currency: 'BRL'
+            }
+        );
 
         //CRIANDO O ELEMENTO button E DEFININDO OS ATRIBUTOS CLASS E A DESCRIÇÃO ADICONAR
         const btnCard = document.createElement('button');
@@ -75,10 +85,11 @@ const listarProdutos = (lista = produtos) => {
         });
         
         //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
-        divCard.appendChild(imgCard)
-        divCard.appendChild(pCard)
-        divCard.appendChild(h2Card)
-        divCard.appendChild(btnCard)
+        divCard.appendChild(imgCard);
+        divCard.appendChild(tituloCard);
+        divCard.appendChild(autorCard);
+        divCard.appendChild(precoCard);
+        divCard.appendChild(btnCard);
 
         //ADICIONANDO O divCard A SECTION CARDS
         sectionCards.appendChild(divCard)
