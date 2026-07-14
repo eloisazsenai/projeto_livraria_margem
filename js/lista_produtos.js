@@ -5,7 +5,7 @@ const produtos = [
         descricao_produto: "A Hora da Estrela",
         valor_unitario: 39.90,
         unidade: "UN",
-        caminho_imagem: "imagens/a_hora_da_estrela.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/650866-M.jpg?default=false",
         id_secao: 1,
         secao: "Literatura Brasileira"
     },
@@ -15,7 +15,7 @@ const produtos = [
         descricao_produto: "Dom Casmurro",
         valor_unitario: 42.50,
         unidade: "UN",
-        caminho_imagem: "imagens/dom_casmurro.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/647501-M.jpg?default=false",
         id_secao: 1,
         secao: "Literatura Brasileira"
     },
@@ -25,7 +25,7 @@ const produtos = [
         descricao_produto: "Memórias Póstumas de Brás Cubas",
         valor_unitario: 45.90,
         unidade: "UN",
-        caminho_imagem: "imagens/memorias_postumas.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/123152-M.jpg?default=false",
         id_secao: 1,
         secao: "Literatura Brasileira"
     },
@@ -35,7 +35,7 @@ const produtos = [
         descricao_produto: "Capitães da Areia",
         valor_unitario: 46.90,
         unidade: "UN",
-        caminho_imagem: "imagens/capitaes_da_areia.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/4178919-M.jpg?default=false",
         id_secao: 1,
         secao: "Literatura Brasileira"
     },
@@ -45,7 +45,7 @@ const produtos = [
         descricao_produto: "Vidas Secas",
         valor_unitario: 38.90,
         unidade: "UN",
-        caminho_imagem: "imagens/vidas_secas.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12369687-M.jpg?default=false",
         id_secao: 1,
         secao: "Literatura Brasileira"
     },
@@ -55,7 +55,7 @@ const produtos = [
         descricao_produto: "Alice no País das Maravilhas",
         valor_unitario: 35.90,
         unidade: "UN",
-        caminho_imagem: "imagens/alice_pais_maravilhas.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12460373-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -65,7 +65,7 @@ const produtos = [
         descricao_produto: "Alice Através do Espelho",
         valor_unitario: 36.90,
         unidade: "UN",
-        caminho_imagem: "imagens/alice_atraves_espelho.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/13801806-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -75,7 +75,7 @@ const produtos = [
         descricao_produto: "O Pequeno Príncipe",
         valor_unitario: 34.90,
         unidade: "UN",
-        caminho_imagem: "imagens/o_pequeno_principe.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8570014-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -85,7 +85,7 @@ const produtos = [
         descricao_produto: "O Hobbit",
         valor_unitario: 59.90,
         unidade: "UN",
-        caminho_imagem: "imagens/o_hobbit.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/14627509-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -95,7 +95,7 @@ const produtos = [
         descricao_produto: "O Senhor dos Anéis",
         valor_unitario: 99.90,
         unidade: "UN",
-        caminho_imagem: "imagens/o_senhor_dos_aneis.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/15120680-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -105,7 +105,7 @@ const produtos = [
         descricao_produto: "Harry Potter e a Pedra Filosofal",
         valor_unitario: 49.90,
         unidade: "UN",
-        caminho_imagem: "imagens/hp_pedra_filosofal.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/15155833-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -115,7 +115,7 @@ const produtos = [
         descricao_produto: "Harry Potter e a Câmara Secreta",
         valor_unitario: 49.90,
         unidade: "UN",
-        caminho_imagem: "imagens/hp_camara_secreta.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/15158664-M.jpg?default=false",
         id_secao: 2,
         secao: "Fantasia"
     },
@@ -125,7 +125,7 @@ const produtos = [
         descricao_produto: "1984",
         valor_unitario: 44.90,
         unidade: "UN",
-        caminho_imagem: "imagens/1984.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8745958-M.jpg?default=false",
         id_secao: 3,
         secao: "Ficção Científica"
     },
@@ -135,7 +135,7 @@ const produtos = [
         descricao_produto: "Admirável Mundo Novo",
         valor_unitario: 46.90,
         unidade: "UN",
-        caminho_imagem: "imagens/admiravel_mundo_novo.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/13623695-M.jpg?default=false",
         id_secao: 3,
         secao: "Ficção Científica"
     },
@@ -145,7 +145,7 @@ const produtos = [
         descricao_produto: "Fahrenheit 451",
         valor_unitario: 42.90,
         unidade: "UN",
-        caminho_imagem: "imagens/fahrenheit_451.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12993656-M.jpg?default=false",
         id_secao: 3,
         secao: "Ficção Científica"
     },
@@ -155,7 +155,7 @@ const produtos = [
         descricao_produto: "Duna",
         valor_unitario: 69.90,
         unidade: "UN",
-        caminho_imagem: "imagens/duna.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/10368109-M.jpg?default=false",
         id_secao: 3,
         secao: "Ficção Científica"
     },
@@ -165,7 +165,7 @@ const produtos = [
         descricao_produto: "Neuromancer",
         valor_unitario: 54.90,
         unidade: "UN",
-        caminho_imagem: "imagens/neuromancer.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/283860-M.jpg?default=false",
         id_secao: 3,
         secao: "Ficção Científica"
     },
@@ -175,7 +175,7 @@ const produtos = [
         descricao_produto: "Orgulho e Preconceito",
         valor_unitario: 39.90,
         unidade: "UN",
-        caminho_imagem: "imagens/orgulho_preconceito.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12054378-M.jpg?default=false",
         id_secao: 4,
         secao: "Romance"
     },
@@ -185,7 +185,7 @@ const produtos = [
         descricao_produto: "Jane Eyre",
         valor_unitario: 45.90,
         unidade: "UN",
-        caminho_imagem: "imagens/jane_eyre.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8235363-M.jpg?default=false",
         id_secao: 4,
         secao: "Romance"
     },
@@ -195,7 +195,7 @@ const produtos = [
         descricao_produto: "O Morro dos Ventos Uivantes",
         valor_unitario: 44.90,
         unidade: "UN",
-        caminho_imagem: "imagens/morro_ventos_uivantes.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12818862-M.jpg?default=false",
         id_secao: 4,
         secao: "Romance"
     },
@@ -205,7 +205,7 @@ const produtos = [
         descricao_produto: "É Assim que Acaba",
         valor_unitario: 49.90,
         unidade: "UN",
-        caminho_imagem: "imagens/e_assim_que_acaba.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/10473609-M.jpg?default=false",
         id_secao: 4,
         secao: "Romance"
     },
@@ -215,7 +215,7 @@ const produtos = [
         descricao_produto: "Verity",
         valor_unitario: 52.90,
         unidade: "UN",
-        caminho_imagem: "imagens/verity.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8747160-M.jpg?default=false",
         id_secao: 4,
         secao: "Romance"
     },
@@ -225,7 +225,7 @@ const produtos = [
         descricao_produto: "Percy Jackson: O Ladrão de Raios",
         valor_unitario: 47.90,
         unidade: "UN",
-        caminho_imagem: "imagens/percy_jackson.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/7239831-M.jpg?default=false",
         id_secao: 5,
         secao: "Infantojuvenil"
     },
@@ -235,7 +235,7 @@ const produtos = [
         descricao_produto: "As Crônicas de Nárnia",
         valor_unitario: 64.90,
         unidade: "UN",
-        caminho_imagem: "imagens/narnia.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12749826-M.jpg?default=false",
         id_secao: 5,
         secao: "Infantojuvenil"
     },
@@ -245,7 +245,7 @@ const produtos = [
         descricao_produto: "Coraline",
         valor_unitario: 39.90,
         unidade: "UN",
-        caminho_imagem: "imagens/coraline.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/14171421-M.jpg?default=false",
         id_secao: 5,
         secao: "Infantojuvenil"
     },
@@ -255,7 +255,7 @@ const produtos = [
         descricao_produto: "O Mágico de Oz",
         valor_unitario: 35.90,
         unidade: "UN",
-        caminho_imagem: "imagens/magico_oz.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12370076-M.jpg?default=false",
         id_secao: 5,
         secao: "Infantojuvenil"
     },
@@ -265,7 +265,7 @@ const produtos = [
         descricao_produto: "Peter Pan",
         valor_unitario: 34.90,
         unidade: "UN",
-        caminho_imagem: "imagens/peter_pan.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8237052-M.jpg?default=false",
         id_secao: 5,
         secao: "Infantojuvenil"
     },
@@ -275,7 +275,7 @@ const produtos = [
         descricao_produto: "Hábitos Atômicos",
         valor_unitario: 58.90,
         unidade: "UN",
-        caminho_imagem: "imagens/habitos_atomicos.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12539702-M.jpg?default=false",
         id_secao: 6,
         secao: "Desenvolvimento Pessoal"
     },
@@ -285,7 +285,7 @@ const produtos = [
         descricao_produto: "O Poder do Hábito",
         valor_unitario: 52.90,
         unidade: "UN",
-        caminho_imagem: "imagens/o_poder_do_habito.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/9078085-M.jpg?default=false",
         id_secao: 6,
         secao: "Desenvolvimento Pessoal"
     },
@@ -295,7 +295,7 @@ const produtos = [
         descricao_produto: "Essencialismo",
         valor_unitario: 49.90,
         unidade: "UN",
-        caminho_imagem: "imagens/essencialismo.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/10401970-M.jpg?default=false",
         id_secao: 6,
         secao: "Desenvolvimento Pessoal"
     },
@@ -305,7 +305,7 @@ const produtos = [
         descricao_produto: "Pai Rico, Pai Pobre",
         valor_unitario: 45.90,
         unidade: "UN",
-        caminho_imagem: "imagens/pai_rico_pai_pobre.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8315603-M.jpg?default=false",
         id_secao: 6,
         secao: "Desenvolvimento Pessoal"
     },
@@ -315,7 +315,7 @@ const produtos = [
         descricao_produto: "Mindset",
         valor_unitario: 54.90,
         unidade: "UN",
-        caminho_imagem: "imagens/mindset.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/746414-M.jpg?default=false",
         id_secao: 6,
         secao: "Desenvolvimento Pessoal"
     },
@@ -325,7 +325,7 @@ const produtos = [
         descricao_produto: "Clean Code",
         valor_unitario: 109.90,
         unidade: "UN",
-        caminho_imagem: "imagens/clean_code.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8065615-M.jpg?default=false",
         id_secao: 7,
         secao: "Tecnologia"
     },
@@ -335,7 +335,7 @@ const produtos = [
         descricao_produto: "JavaScript: O Guia Definitivo",
         valor_unitario: 129.90,
         unidade: "UN",
-        caminho_imagem: "imagens/javascript_guia.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/13194548-M.jpg?default=false",
         id_secao: 7,
         secao: "Tecnologia"
     },
@@ -345,7 +345,7 @@ const produtos = [
         descricao_produto: "Entendendo Algoritmos",
         valor_unitario: 79.90,
         unidade: "UN",
-        caminho_imagem: "imagens/entendendo_algoritmos.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/13780321-M.jpg?default=false",
         id_secao: 7,
         secao: "Tecnologia"
     },
@@ -355,7 +355,7 @@ const produtos = [
         descricao_produto: "Python Fluente",
         valor_unitario: 139.90,
         unidade: "UN",
-        caminho_imagem: "imagens/python_fluente.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/8743408-M.jpg?default=false",
         id_secao: 7,
         secao: "Tecnologia"
     },
@@ -365,7 +365,7 @@ const produtos = [
         descricao_produto: "Código Limpo na Prática",
         valor_unitario: 89.90,
         unidade: "UN",
-        caminho_imagem: "imagens/codigo_limpo_pratica.jpg",
+        caminho_imagem: "imagens/livros_amontoados.jpg",
         id_secao: 7,
         secao: "Tecnologia"
     },
@@ -375,7 +375,7 @@ const produtos = [
         descricao_produto: "A Revolução dos Bichos",
         valor_unitario: 29.90,
         unidade: "UN",
-        caminho_imagem: "imagens/revolucao_bichos.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/15200524-M.jpg?default=false",
         id_secao: 8,
         secao: "Clássicos"
     },
@@ -385,7 +385,7 @@ const produtos = [
         descricao_produto: "O Retrato de Dorian Gray",
         valor_unitario: 41.90,
         unidade: "UN",
-        caminho_imagem: "imagens/dorian_gray.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/14314858-M.jpg?default=false",
         id_secao: 8,
         secao: "Clássicos"
     },
@@ -395,7 +395,7 @@ const produtos = [
         descricao_produto: "Frankenstein",
         valor_unitario: 43.90,
         unidade: "UN",
-        caminho_imagem: "imagens/frankenstein.jpg",
+        caminho_imagem: "https://covers.openlibrary.org/b/id/12356249-M.jpg?default=false",
         id_secao: 8,
         secao: "Clássicos"
     }

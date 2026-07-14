@@ -30,6 +30,9 @@ const listarProdutos = (lista = produtos) => {
         const imgCard = document.createElement('img')
         imgCard.setAttribute('src', elem.caminho_imagem)
         imgCard.setAttribute('alt', elem.descricao_produto)
+        imgCard.addEventListener('error', () => {
+            imgCard.src = 'imagens/livros_amontoados.jpg'
+        }, { once: true })
 
         //CRIANDO O ELEMENTO p E ATRIBUINDO A DESCRIÇÃO DOS PRODUTOS
         const tituloCard = document.createElement('h2');
@@ -73,6 +76,10 @@ const listarProdutos = (lista = produtos) => {
 
             if (produtoExistente) {
                 produtoExistente.quantidade++;
+                produtoExistente.nome = produtoCarrinho.nome;
+                produtoExistente.autor = produtoCarrinho.autor;
+                produtoExistente.preco = produtoCarrinho.preco;
+                produtoExistente.imagem = produtoCarrinho.imagem;
             } else {
                 carrinho.push(produtoCarrinho);
             }

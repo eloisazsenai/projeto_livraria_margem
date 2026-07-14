@@ -50,8 +50,12 @@ const criarItemCarrinho = produto => {
     item.className = 'item-carrinho';
 
     const imagem = document.createElement('img');
-    imagem.src = `../${produto.imagem}`;
+    const imagemExterna = produto.imagem.startsWith('http');
+    imagem.src = imagemExterna ? produto.imagem : `../${produto.imagem}`;
     imagem.alt = `Capa do livro ${produto.nome}`;
+    imagem.addEventListener('error', () => {
+        imagem.src = '../imagens/livros_amontoados.jpg';
+    }, { once: true });
 
     const informacoes = document.createElement('div');
     informacoes.className = 'informacoes';
