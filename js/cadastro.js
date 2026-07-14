@@ -15,3 +15,17 @@ formCadastro.addEventListener('submit', event => {
 
     formCadastro.reset();
 });
+
+//ADICIONA LOGICA AO BOTÃO MOSTAR/OCULTAR SENHA
+const botoesMostrarSenha =
+    document.querySelectorAll('.btn-mostrar-senha');
+
+botoesMostrarSenha.forEach(botao => {
+    botao.addEventListener('click', () => {
+        const campo = document.getElementById(botao.dataset.campo);
+        const senhaEstaVisivel = campo.type === 'text';
+
+        campo.type = senhaEstaVisivel ? 'password' : 'text';
+        botao.textContent = senhaEstaVisivel ? 'Mostrar' : 'Ocultar';
+    });
+});

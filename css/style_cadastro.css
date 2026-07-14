@@ -171,3 +171,24 @@ body{
         width: 100%;
     }
 }
+
+.campo-senha {
+    position: relative;
+}
+
+.campo-senha input {
+    padding-right: 85px !important;
+}
+
+.campo-senha .btn-mostrar-senha {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+    color: var(--cor01);
+    font-weight: bold;
+    cursor: pointer;
+}

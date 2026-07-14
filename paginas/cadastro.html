@@ -103,22 +103,44 @@
 
                 <div class="campo">
                     <label for="senha">Senha*</label>
-                    <input type="password" id="senha" name="senha" maxlength="60" required placeholder="Crie sua senha...">
+
+                    <div class="campo-senha">
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            maxlength="60"
+                            required
+                            placeholder="Crie sua senha...">
+
+                        <button
+                            type="button"
+                            class="btn-mostrar-senha"
+                            data-campo="senha">
+                            Mostrar
+                        </button>
+                    </div>
                 </div>
 
                 <div class="campo">
                     <label for="confirm-senha">Confirmação de senha*</label>
-                    <input type="password" id="confirm-senha" name="confirm-senha" maxlength="60" required placeholder="Confirme sua senha...">
-                </div>
 
-                <div class="checkbox">
-                    <input type="checkbox" name="notificacao" id="notificacao">
-                    <label for="notificacao">Deseja receber notificações pelo WhatsApp</label>
-                </div>
+                    <div class="campo-senha">
+                        <input
+                            type="password"
+                            id="confirm-senha"
+                            name="confirm-senha"
+                            maxlength="60"
+                            required
+                            placeholder="Confirme sua senha...">
 
-                <div id="div-btn">
-                    <button type="submit" id="btn-cadastrar" class="botoes">Cadastrar</button>
-                    <button type="reset" id="btn-limpar" class="botoes">Limpar</button>
+                        <button
+                            type="button"
+                            class="btn-mostrar-senha"
+                            data-campo="confirm-senha">
+                            Mostrar
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
