@@ -68,7 +68,8 @@
 
                 <div class="campo">
                     <label for="cep">CEP*</label>
-                    <input type="text" id="cep" name="cep" maxlength="9" required placeholder="Digite seu CEP...">
+                    <input type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" autocomplete="postal-code" required placeholder="00000-000">
+                    <small id="status-cep" class="status-cep" aria-live="polite"></small>
                 </div>
 
                 <div class="campo">
@@ -78,7 +79,7 @@
 
                 <div class="campo campo-largo">
                     <label for="logradouro">Logradouro*</label>
-                    <input type="text" id="logradouro" name="logradouro" maxlength="60" required placeholder="Digite seu logradouro...">
+                    <input type="text" id="logradouro" name="logradouro" maxlength="60" autocomplete="address-line1" required placeholder="Digite seu logradouro...">
                 </div>
 
                 <div class="campo campo-largo">
@@ -88,17 +89,17 @@
 
                 <div class="campo">
                     <label for="bairro">Bairro*</label>
-                    <input type="text" id="bairro" name="bairro" maxlength="20" required placeholder="Digite seu bairro...">
+                    <input type="text" id="bairro" name="bairro" maxlength="40" required placeholder="Digite seu bairro...">
                 </div>
 
                 <div class="campo">
                     <label for="cidade">Cidade*</label>
-                    <input type="text" id="cidade" name="cidade" maxlength="20" required placeholder="Digite sua cidade...">
+                    <input type="text" id="cidade" name="cidade" maxlength="60" autocomplete="address-level2" required placeholder="Digite sua cidade...">
                 </div>
 
                 <div class="campo campo-largo">
                     <label for="estado">Estado*</label>
-                    <input type="text" id="estado" name="estado" maxlength="60" required placeholder="Digite seu estado...">
+                    <input type="text" id="estado" name="estado" maxlength="2" autocomplete="address-level1" required placeholder="UF">
                 </div>
 
                 <div class="campo">

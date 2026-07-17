@@ -74,6 +74,25 @@ body{
     box-shadow: 0 0 0 3px rgba(129, 50, 255, 0.15);
 }
 
+.status-cep{
+    min-height: 18px;
+    color: #665874;
+    font-size: 0.82rem;
+}
+
+.status-cep--carregando{
+    color: var(--cor02);
+}
+
+.status-cep--sucesso{
+    color: #24733d;
+}
+
+.status-cep--erro{
+    color: #b3261e;
+    font-weight: 600;
+}
+
 .checkbox{
     grid-column: 1 / -1;
     display: flex;
