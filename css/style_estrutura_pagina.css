@@ -25,7 +25,7 @@ body{
 
 /* ESTRUTURA GERAL */
 body{
-    background-color: var(--branca);
+    background: linear-gradient(135deg, #faf7ff, #eee4ff);
 }
 
 #geral{
