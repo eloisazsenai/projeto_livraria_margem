@@ -25,7 +25,10 @@ O projeto possui finalidade educacional. As funcionalidades de cadastro, login e
 - Formulário demonstrativo de cadastro;
 - Validação de confirmação de senha;
 - Página demonstrativa de login;
-- Layout adaptado para computadores e dispositivos móveis.
+- Layout adaptado para computadores e dispositivos móveis;
+- Preenchimento automático de endereço a partir do CEP;
+- Validação e formatação do CEP;
+- Mensagens de carregamento e erro durante a consulta.
 
 ## Tecnologias utilizadas
 
@@ -34,6 +37,7 @@ O projeto possui finalidade educacional. As funcionalidades de cadastro, login e
 - JavaScript;
 - Local Storage;
 - Open Library Covers API;
+- ViaCEP API;
 - Git e GitHub.
 
 ## Estrutura do projeto
@@ -103,7 +107,11 @@ Durante o desenvolvimento deste projeto, foram praticados conceitos como:
 - Uso do `localStorage`;
 - Organização do código em arquivos separados;
 - Controle de versão com Git e GitHub;
-- Correção de erros e evolução incremental de funcionalidades.
+- Correção de erros e evolução incremental de funcionalidades;
+- Consumo de APIs com `fetch`;
+- Uso de funções assíncronas com `async` e `await`;
+- Tratamento de erros em requisições;
+- Preenchimento dinâmico de formulários.
 
 ## Limitações
 
